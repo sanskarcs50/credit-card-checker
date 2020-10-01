@@ -55,10 +55,10 @@ int checksum(long ccn, long CCN)
 
     for (sum1 = 0; ccn != 0 ; ccn = ccn / 100)
     {
-        int products =  2 * ((ccn % 100) / 100); 
+        int products =  2 * ((ccn % 100) / 10); 
         sum1 = sum1 + products / 10 + (products % 10);
     }
-    for (sum2 = 0; CCN != 0; CCN = CCN / 10)
+    for (sum2 = 0; CCN != 0; CCN = CCN / 100)
     {
         sum2 = sum2 + (CCN % 10);
     }
@@ -83,5 +83,8 @@ void print_cc_type(long ccn)
     {
         printf("AMEX\n");
     }
-   
+    else
+    {
+        printf("INVALID\n");
+    }
 }
